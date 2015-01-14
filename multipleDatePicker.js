@@ -155,7 +155,13 @@ angular.module('multipleDatePicker', [])
         event.preventDefault();
 
         var prevented = false;
+        var len = scope.days.length;
+        while(len--) {
+          scope.days[len]['selected'] = false;
+        }
 
+        momentDate.selected = true;
+        
         event.preventDefault = function() {
           prevented = true;
         };
